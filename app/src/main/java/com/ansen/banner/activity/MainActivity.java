@@ -42,12 +42,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        vpBanner= (ViewPager) findViewById(R.id.vp_banner);
-        bannerAdapter = new BannerAdapter(this);
-        bannerAdapter.setOnBannerClickListener(onBannerClickListener);
+        vpBanner= findViewById(R.id.vp_banner);
+        bannerAdapter = new BannerAdapter(this);//初始化适配器
+        bannerAdapter.setOnBannerClickListener(onBannerClickListener);//图片点击监听
         vpBanner.setOffscreenPageLimit(2);//缓存页数
-        vpBanner.setAdapter(bannerAdapter);
-        vpBanner.addOnPageChangeListener(onPageChangeListener);
+        vpBanner.setAdapter(bannerAdapter);//设置适配器
+        vpBanner.addOnPageChangeListener(onPageChangeListener);//页面改变监听
 
         viewGroup = (ViewGroup) findViewById(R.id.viewGroup);//显示点点点控件
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             //设置图片宽高
             imageView.setLayoutParams(new ViewGroup.LayoutParams(10, 10));
             if (i == 0) {
-                imageView.setBackgroundResource(R.mipmap.icon_page_select);
+                imageView.setBackgroundResource(R.mipmap.icon_page_select);//第一个默认选中
             } else {
                 imageView.setBackgroundResource(R.mipmap.icon_page_normal);
             }
