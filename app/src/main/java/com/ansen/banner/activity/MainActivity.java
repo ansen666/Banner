@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         vpBanner.setAdapter(bannerAdapter);//设置适配器
         vpBanner.addOnPageChangeListener(onPageChangeListener);//页面改变监听
 
-        viewGroup = (ViewGroup) findViewById(R.id.viewGroup);//显示点点点控件
+        viewGroup = findViewById(R.id.viewGroup);//显示点点点控件
 
         //将点点加入到ViewGroup中
         for (int i = 0; i < bannerAdapter.getBanners().length; i++) {
